@@ -1,0 +1,9 @@
+tests() {
+    ((TOTAL++))
+    if diff <($1 2>/dev/null) <($2 2>/dev/null) >/dev/null; then
+        echo "PASS:$3"
+    else
+        echo "FAIL:$3"
+        ((FAILED++))
+    fi
+}
